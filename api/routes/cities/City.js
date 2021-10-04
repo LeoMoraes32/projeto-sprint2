@@ -25,6 +25,7 @@ class City {
     async loadName () {
         const found = await TableCity.loadByName(this.name)
         this.name = found.name
+        this.state = found.state
        
     }
 
