@@ -1,12 +1,12 @@
-const ModelTableCity = require('../routes/cities/ModelTableCity')
-const ModelTableClient = require('../routes/clients/ModelTableClient')
+const models = [
+    require('../routes/cities/ModelTableCity'),
+    require('../routes/clients/ModelTableClient')
+]
 
-ModelTableCity
-    .sync()
-    .then(() => console.log('Table CITY created successfully'))
-    .catch(console.log)
-
-ModelTableClient
-    .sync()
-    .then(() => console.log('Table CLIENTS created successfully'))
-    .catch(console.log)
+async function createTables () {
+    for (let count = 0; count < models.length; count++){
+        const model = models[count]
+        await model.sync()
+    }
+}
+createTables()

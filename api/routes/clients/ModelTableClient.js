@@ -19,15 +19,20 @@ const columns = {
         allowNull: false
     },
     city: {
-        type: Sequelize.STRING,
-        allowNull: false
+        type: Sequelize.INTEGER,
+        allowNull: false,
+        references: {
+            model: require('../cities/ModelTableCity'),
+            key: 'id'
+        }
     }
 }
 
 const options = {
     freezeTableName: true,
     tableName: 'clients',
-    timestamps: 'dateCreation',
+    timestamps: true,
+    createdAt: 'dateCreation',
     updatedAt: 'dateUpdate',
     version: 'version'
 }
