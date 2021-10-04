@@ -39,7 +39,9 @@ module.exports = {
 
     remove (id) {
         return Model.destroy({
-            where: { id:id }
+            where: { 
+                id: id 
+            }
         })
     },
 

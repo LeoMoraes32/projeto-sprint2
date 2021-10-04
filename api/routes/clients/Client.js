@@ -46,7 +46,7 @@ class Client {
         this.birthDate = found.birthDate
         this.age = found.age
         this.city = found.city
-        this.createdAt = found.createdAt
+        this.dateCreation = found.dateCreation
         this.dateUpdate = found.dateUpdate 
     }
 

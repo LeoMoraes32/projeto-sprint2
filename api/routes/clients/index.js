@@ -35,7 +35,7 @@ router.get('/:id', async (req, res) => {
     }
 })
 
-router.get('/:fullName', async (req, res) =>{
+router.get('/name/:fullName', async (req, res) =>{
     try{
         const fullName = req.params.fullName
         const client = new Client({ fullName: fullName})
