@@ -31,11 +31,17 @@ class City {
 
     async loadState() {
         const found = await TableCity.loadByState(this.state)
-        this.name = found.name
-        this.state = found.state
-        this.dateCreation = found.dateCreation
-        this.dateUpdate = found.dateUpdate
-        this.version = found.version
+
+        const list = []
+        found.forEach(item => {
+            list.push({
+                name: item.dataValues.name,
+                state: item.dataValues.state
+            })
+        })
+
+        return list
+       
     }
 }
 

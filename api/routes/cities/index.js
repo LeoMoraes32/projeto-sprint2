@@ -51,9 +51,9 @@ router.get('/state/:state', async (req, res) => {
     try{
         const state = req.params.state
         const city = new City({ state: state })
-        await city.loadState()
+        const result = await city.loadState()
         res.send(
-            JSON.stringify(city)
+            JSON.stringify(result)
         )
     } catch (error) {
         res.send(
